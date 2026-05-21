@@ -1,4 +1,4 @@
-import "../styles/globals.css";
+import "../globals.css";
 import { useState, useRef, useEffect } from "react";
 
 const WELCOME_MSG = {
@@ -50,7 +50,7 @@ export default function Home() {
         body: JSON.stringify({ messages: apiMessages }),
       });
       const data = await res.json();
-      setMessages((prev) => [...prev, { role: "assistant", content: data.text || "Desculpe, não consegui processar." }]);
+      setMessages((prev) => [...prev, { role: "assistant", content: data.message || "Desculpe, não consegui processar." }]);
     } catch {
       setMessages((prev) => [...prev, { role: "assistant", content: "Desculpe, houve um problema. Tente novamente. 🙏" }]);
     } finally {
