@@ -1,7 +1,3 @@
-
-export default function App({ Component, pageProps }) {
-  return <Component {...pageProps} />;
-}
 import { useState, useRef, useEffect } from "react";
 
 const WELCOME_MSG = {
